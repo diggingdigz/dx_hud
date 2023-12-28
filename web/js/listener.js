@@ -18,6 +18,8 @@ window.onload = (event) => {
   const Hunger = document.getElementById("HungerIndicator");
   const Thirst = document.getElementById("ThirstIndicator");
   const Stress = document.getElementById("StressIndicator");
+  const Drunk = document.getElementById("DrunkIndicator");
+  const Drug = document.getElementById("DrugIndicator");
 
   const HealthIcon = document.getElementById("HealthIcon");
   const SpeedIcon = document.getElementById("SpeedIcon");
@@ -27,6 +29,8 @@ window.onload = (event) => {
   const HungerIcon = document.getElementById("HungerIcon");
   const ThirstIcon = document.getElementById("ThirstIcon");
   const StressIcon = document.getElementById("StressIcon");
+  const DrunkIcon = document.getElementById("DrunkIcon");
+  const DrugIcon = document.getElementById("DrugIcon");
 
   const Seatbelt = document.getElementById("SeatbeltIcon");
   const Buckle = document.getElementById("buckle");
@@ -211,18 +215,32 @@ window.onload = (event) => {
     }
 
     if (action == "status") {
-      Hunger.style.display = "block";
-      Thirst.style.display = "block";
+      Hunger.style.display = data.hunger < 50 && "block";
+      Thirst.style.display = data.thirst < 50 && "block";
       Stress.style.display = data.stress > 5 && "block";
+      Drunk.style.display = data.drunk > 5 && "block";
+      Drug.style.display = data.drugs > 5 && "block";
 
       data.hunger < 15 && HungerIcon.classList.toggle("flash");
       data.thirst < 15 && ThirstIcon.classList.toggle("flash");
       data.stress > 50 && StressIcon.classList.toggle("flash");
+      data.drunk > 50 && DrunkIcon.classList.toggle("flash");
+      data.drugs > 50 && DrugIcon.classList.toggle("flash");
 
-      Circle.HungerIndicator.animate(data.hunger / 100);
-      Circle.ThirstIndicator.animate(data.thirst / 100);
+      Circle.HungerIndicator.animate(data.hunger / 100, function () {
+        Hunger.style.display = data.hunger >= 50 && "none";
+      });
+      Circle.ThirstIndicator.animate(data.thirst / 100, function () {
+        Thirst.style.display = data.thirst >= 50 && "none";
+      });
       Circle.StressIndicator.animate(data.stress / 100, function () {
         Stress.style.display = data.stress <= 5 && "none";
+      });
+      Circle.DrunkIndicator.animate(data.drunk / 100, function () {
+        Drunk.style.display = data.drunk <= 5 && "none";
+      });
+      Circle.DrugIndicator.animate(data.drugs / 100, function () {
+        Drug.style.display = data.drugs <= 5 && "none";
       });
     }
 
