@@ -22,7 +22,7 @@ if not IsDuplicityVersion() then
         DisplayRadar(false)
         repeat Wait(100) until PlayerLoaded and NuiReady
 
-        if GetConvarInt('hud:circleMap', true) == 1 then
+        if GetConvar('hud:circleMap', 'true') == 'true' then
             RequestStreamedTextureDict('circlemap', false)
             repeat Wait(100) until HasStreamedTextureDictLoaded('circlemap')
             AddReplaceTexture('platform:/textures/graphics', 'radarmasksm', 'circlemap', 'radarmasksm')
@@ -73,7 +73,7 @@ if not IsDuplicityVersion() then
 
         SendMessage('setPlayerId', cache.serverId)
 
-        if GetConvarInt('hud:logo', true) == 1 then
+        if GetConvar('hud:logo', 'true') == 'true' then
             SendMessage('setLogo')
         end
 
@@ -86,7 +86,7 @@ if not IsDuplicityVersion() then
         InitializeHUD()
     end)
 else
-    if GetConvarInt('hud:versioncheck', true) == 1 then
+    if GetConvar('hud:versioncheck', 'true') == 'true' then
         lib.versionCheck('0xDEMXN/dx_hud')
     end
 end
