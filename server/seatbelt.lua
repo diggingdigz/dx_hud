@@ -1,2 +1,3 @@
-if GetConvarInt('hud:seatbelt', false) == 0 then return end
-SetConvarReplicated('game_enableFlyThroughWindscreen', 'true')
+if GetConvar('hud:seatbelt', 'false') == 'true' then
+	SetConvarReplicated('game_enableFlyThroughWindscreen', 'true')
+end
