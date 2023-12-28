@@ -54,7 +54,7 @@ if GetResourceState('es_extended'):find('start') then
 		SendMessage('status', {
 			hunger = hunger,
 			thirst = thirst,
-			stress = GetConvarInt('hud:stress', false) == 1 and stress,
+			stress = GetConvar('hud:stress', 'false') and stress,
 		})
 	end)
 end

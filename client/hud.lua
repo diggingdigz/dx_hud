@@ -26,7 +26,7 @@ CreateThread(function()
 				lastArmour = curArmour
 			end
 
-			if GetConvarInt('hud:stamina', false) == 1 then
+			if GetConvar('hud:stamina', 'false') == 'true' then
 				local curStamina = GetPlayerStamina(cache.playerId)
 				local maxStamina = GetPlayerMaxStamina(cache.playerId)
 				if curStamina < maxStamina then
