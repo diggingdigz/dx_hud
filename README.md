@@ -4,9 +4,9 @@ dx_hud is a FiveM HUD for ox_core or ESX Legacy.
 
 ## Dependencies
 
-- [ox_lib](https://github.com/overextended/ox_lib)
+- ox_lib
 
-This also requires a framework of your choice between ox_core and es_extended.
+This also requires a framework of your choice between ox_core and es_extended.  
 Note that if you are using ESX, you will also need esx_status and esx_basicneeds.
 
 ## Download & Installation
@@ -76,9 +76,9 @@ setr hud:versioncheck true
 <br>
 <table><tr><td><h4 align='center'>Legal Notices</h4></tr></td>
 <tr><td>
-dx_hud
+dx_hud for ESX Legacy
 
-Copyright © 2023  [Demxn](https://github.com/0xDEMXN)
+Copyright © 2022  [Demxn](https://github.com/0xDEMXN)
 
 
 This program is free software: you can redistribute it and/or modify
